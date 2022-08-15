@@ -183,6 +183,7 @@ function SignUp() {
           style={{ marginHorizontal: 16, borderRadius: 6 }}
         >
           <Button
+            onPress={() => navigation.goBack('SignIn')}
             style={{
               height: 48,
               backgroundColor: 'transparent',

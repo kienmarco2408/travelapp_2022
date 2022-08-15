@@ -105,13 +105,16 @@ function SignIn() {
         </View>
 
         {/* Button*/}
+
         <LinearGradient
           colors={['#F6472E', '#FB7A41']}
           style={{ marginHorizontal: 16, borderRadius: 6 }}
         >
           <Button
+            onPress={() => navigation.push('Bottom')}
             style={{
               height: 48,
+              width: 396,
               backgroundColor: 'transparent',
             }}
           >
