@@ -1,8 +1,10 @@
-import { View, Text, SafeAreaView, TextInput } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, ScrollView } from 'react-native';
 import React from 'react';
 import SearchBox from '../screenComponent/SearchBox';
 import { useFonts } from 'expo-font';
 import Stories from '../screenComponent/Stories';
+import Post from '../screenComponent/Post';
+import PostSecond from '../screenComponent/Post_1';
 
 const Home = () => {
   const [loaded] = useFonts({
@@ -15,20 +17,37 @@ const Home = () => {
   }
   return (
     <SafeAreaView>
-      <View style={{ paddingTop: 26 }}>
-        <SearchBox />
-        <Text
-          style={{
-            marginLeft: 16,
-            marginTop: 32,
-            fontFamily: 'Poppins_Medium',
-            color: '#107AF5',
-            fontSize: 16,
-          }}
+      <View style={{ paddingTop: 16, paddingBottom: 50 }}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
         >
-          Story
-        </Text>
-        <Stories />
+          <SearchBox />
+          <Text
+            style={{
+              marginLeft: 16,
+              marginTop: 20,
+              fontFamily: 'Poppins_Medium',
+              color: '#107AF5',
+              fontSize: 16,
+            }}
+          >
+            Story
+          </Text>
+          <Stories />
+          <Post />
+          <Text
+            style={{
+              marginLeft: 16,
+              fontFamily: 'Poppins_Medium',
+              color: '#107AF5',
+              fontSize: 16,
+            }}
+          >
+            Best Rating
+          </Text>
+          <PostSecond />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

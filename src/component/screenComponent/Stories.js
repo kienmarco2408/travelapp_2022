@@ -80,7 +80,7 @@ const Stories = () => {
                 <View
                   style={{
                     position: 'absolute',
-                    bottom: 25,
+                    bottom: 30,
                     right: 10,
                     zIndex: 1,
                     backgroundColor: 'white',

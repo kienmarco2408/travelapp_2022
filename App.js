@@ -63,7 +63,9 @@ const BottomTabScreen = () => {
             iconName = focused ? 'home-outline' : 'home-outline';
             size = focused ? size + 2 : size + 2;
           } else if (route.name === 'Save') {
-            iconName = focused ? 'ios-heart-outline' : 'ios-heart-outline';
+            iconName = focused
+              ? 'ios-bookmarks-outline'
+              : 'ios-bookmarks-outline';
           } else if (route.name === 'Reels') {
             iconName = focused
               ? 'caret-forward-circle'

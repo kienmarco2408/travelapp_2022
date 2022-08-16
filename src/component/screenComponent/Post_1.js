@@ -6,24 +6,26 @@ import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-const Post = () => {
+const PostSecond = () => {
   const postInfo = [
     {
-      postTitle: 'Kathryn Murphy',
-      postPersonImage: require('../storage/images/avt_7.jpg'),
-      postImage: require('../storage/images/post_1.jpg'),
-      address: 'Los Angeles',
-      rate: 4.75,
-      personRate: 214,
+      postTitle: 'Marvin McKinney',
+      postPersonImage: require('../storage/images/avt_9.jpg'),
+      postImage: require('../storage/images/post_3.jpg'),
+      address: 'Beach Caribbean',
+      likes: 654,
+      rate: 4.5,
+      personRate: 326,
       likes: 654,
       isSave: false,
       isLike: false,
     },
     {
-      postTitle: 'Darlene Robertson',
-      postPersonImage: require('../storage/images/avt_8.jpg'),
-      postImage: require('../storage/images/post_2.jpg'),
-      address: 'Venice',
+      postTitle: 'Gabriella Trevino',
+      postPersonImage: require('../storage/images/avt_10.jpg'),
+      postImage: require('../storage/images/post_4.jpg'),
+      address: 'Shang Hai',
+      likes: 654,
       rate: 4.5,
       personRate: 326,
       likes: 654,
@@ -208,4 +210,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostSecond;
