@@ -14,6 +14,8 @@ import Profile from './src/component/screens/Profile';
 import SignIn from './src/component/screens/SignIn';
 import SignUp from './src/component/screens/SignUp';
 import Status from './src/component/screenComponent/Status';
+import DetailCategories from './src/component/screenComponent/DetailCategories';
+import DetailPost from './src/component/screens/DetailPost';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -147,6 +149,8 @@ function App() {
           <Stack.Screen name="Signup" component={SignUp} />
           <Stack.Screen name="Bottom" component={BottomTabScreen} />
           <Stack.Screen name="Status" component={Status} />
+          <Stack.Screen name="DetailCategories" component={DetailCategories} />
+          <Stack.Screen name="DetailPost" component={DetailPost} />
         </Stack.Navigator>
       ) : (
         <AppIntroSlider

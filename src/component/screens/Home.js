@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import Stories from '../screenComponent/Stories';
 import Post from '../screenComponent/Post';
 import PostSecond from '../screenComponent/Post_1';
+import Categories from '../screenComponent/Categories';
 
 const Home = () => {
   const [loaded] = useFonts({
@@ -46,7 +47,10 @@ const Home = () => {
           >
             Best Rating
           </Text>
-          <PostSecond />
+          <Categories />
+          <View style={{ marginTop: 16 }}>
+            <PostSecond />
+          </View>
         </ScrollView>
       </View>
     </SafeAreaView>

@@ -5,10 +5,13 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const Post = () => {
+  const navigation = useNavigation();
   const postInfo = [
     {
+      id: 1,
       postTitle: 'Kathryn Murphy',
       postPersonImage: require('../storage/images/avt_7.jpg'),
       postImage: require('../storage/images/post_1.jpg'),
@@ -16,10 +19,12 @@ const Post = () => {
       rate: 4.75,
       personRate: 214,
       likes: 654,
+      header: "What you'll do",
       isSave: false,
       isLike: false,
     },
     {
+      id: 2,
       postTitle: 'Darlene Robertson',
       postPersonImage: require('../storage/images/avt_8.jpg'),
       postImage: require('../storage/images/post_2.jpg'),
@@ -27,6 +32,7 @@ const Post = () => {
       rate: 4.5,
       personRate: 326,
       likes: 654,
+      header: "What you'll do",
       isSave: false,
       isLike: false,
     },
@@ -89,28 +95,34 @@ const Post = () => {
                 style={{ fontSize: 20, color: '#FB7A41' }}
               />
             </View>
-            <View
-              style={{
-                position: 'relative',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Image
-                source={data.postImage}
-                style={{ width: '92%', height: 200, borderRadius: 6 }}
-              />
-            </View>
-            <View style={{ paddingLeft: 16, paddingTop: 16 }}>
-              <Text
+            <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+              <View
                 style={{
-                  fontFamily: 'Poppins_Medium',
-                  fontSize: 16,
-                  paddingVertical: 2,
+                  position: 'relative',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}
               >
-                Whale Watching Tour
-              </Text>
+                <Image
+                  source={data.postImage}
+                  style={{ width: '92%', height: 200, borderRadius: 6 }}
+                />
+              </View>
+            </TouchableOpacity>
+
+            <View style={{ paddingLeft: 16, paddingTop: 16 }}>
+              <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins_Medium',
+                    fontSize: 16,
+                    paddingVertical: 2,
+                  }}
+                >
+                  Whale Watching Tour
+                </Text>
+              </TouchableOpacity>
+
               <View
                 style={{
                   flexDirection: 'row',
@@ -167,14 +179,14 @@ const Post = () => {
                 paddingVertical: 15,
               }}
             >
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  paddingLeft: 5,
-                }}
-              >
-                <TouchableOpacity onPress={() => setLike(!like)}>
+              <TouchableOpacity onPress={() => setLike(!like)}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    paddingLeft: 5,
+                  }}
+                >
                   <AntDesign
                     name={like ? 'like1' : 'like2'}
                     style={{
@@ -183,23 +195,24 @@ const Post = () => {
                       color: like ? '#FB7A41' : '#FB7A41',
                     }}
                   />
-                </TouchableOpacity>
-                <Text style={{ color: '#FB7A41' }}>Like</Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
-              >
-                <TouchableOpacity>
+
+                  <Text style={{ color: '#FB7A41' }}>Like</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}
+                >
                   <Ionicons
                     name="ios-chatbubble-outline"
                     style={{ fontSize: 25, paddingRight: 10, color: '#FB7A41' }}
                   />
-                </TouchableOpacity>
-                <Text style={{ color: '#FB7A41' }}>Comment</Text>
-              </View>
+                  <Text style={{ color: '#FB7A41' }}>Comment</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         );
