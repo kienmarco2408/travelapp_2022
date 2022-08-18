@@ -57,6 +57,7 @@ const BottomTabScreen = () => {
           position: 'absolute',
           borderTopColor: 'rgba(0, 0, 0, .2)',
           height: 60,
+          shadowOpacity: 0.25,
         },
 
         tabBarIcon: ({ focused, size, color }) => {

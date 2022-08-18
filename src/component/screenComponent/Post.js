@@ -12,12 +12,16 @@ const Post = () => {
   const postInfo = [
     {
       id: 1,
-      postTitle: 'Kathryn Murphy',
+      postUser: 'Kathryn Murphy',
       postPersonImage: require('../storage/images/avt_7.jpg'),
       postImage: require('../storage/images/post_1.jpg'),
+      hour: '4 hours',
       address: 'Los Angeles',
+      title: 'Whale Watching Tour',
       rate: 4.75,
       personRate: 214,
+      caption:
+        'It all boils down to the fact that we understand the “flatness” of our phone screens. Faux 3d elements and real-world textures mentally clash with that flatness creating some dissonance.',
       likes: 654,
       header: "What you'll do",
       isSave: false,
@@ -25,12 +29,16 @@ const Post = () => {
     },
     {
       id: 2,
-      postTitle: 'Darlene Robertson',
+      postUser: 'Darlene Robertson',
       postPersonImage: require('../storage/images/avt_8.jpg'),
       postImage: require('../storage/images/post_2.jpg'),
+      hour: '4 hours',
       address: 'Venice',
+      title: 'Whale Watching Tour',
       rate: 4.5,
       personRate: 326,
+      caption:
+        'It all boils down to the fact that we understand the “flatness” of our phone screens. Faux 3d elements and real-world textures mentally clash with that flatness creating some dissonance.',
       likes: 654,
       header: "What you'll do",
       isSave: false,
@@ -66,7 +74,7 @@ const Post = () => {
                 />
                 <View style={{ paddingLeft: 16 }}>
                   <Text style={{ fontSize: 15, fontFamily: 'Poppins_Medium' }}>
-                    {data.postTitle}
+                    {data.postUser}
                   </Text>
                   <Text
                     style={{
@@ -95,7 +103,25 @@ const Post = () => {
                 style={{ fontSize: 20, color: '#FB7A41' }}
               />
             </View>
-            <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.push('DetailPost', {
+                  postImage: data.postImage,
+                  postPersonImage: data.postPersonImage,
+                  postUser: data.postUser,
+                  hour: data.hour,
+                  address: data.address,
+                  title: data.title,
+                  rate: data.rate,
+                  personRate: data.personRate,
+                  caption: data.caption,
+                  likes: data.likes,
+                  header: data.header,
+                  isLike: data.isLike,
+                  isSave: data.isSave,
+                })
+              }
+            >
               <View
                 style={{
                   position: 'relative',
@@ -111,7 +137,25 @@ const Post = () => {
             </TouchableOpacity>
 
             <View style={{ paddingLeft: 16, paddingTop: 16 }}>
-              <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.push('DetailPost', {
+                    postImage: data.postImage,
+                    postPersonImage: data.postPersonImage,
+                    postUser: data.postUser,
+                    hour: data.hour,
+                    address: data.address,
+                    title: data.title,
+                    rate: data.rate,
+                    personRate: data.personRate,
+                    caption: data.caption,
+                    likes: data.likes,
+                    header: data.header,
+                    isLike: data.isLike,
+                    isSave: data.isSave,
+                  })
+                }
+              >
                 <Text
                   style={{
                     fontFamily: 'Poppins_Medium',
@@ -119,7 +163,7 @@ const Post = () => {
                     paddingVertical: 2,
                   }}
                 >
-                  Whale Watching Tour
+                  {data.title}
                 </Text>
               </TouchableOpacity>
 
@@ -199,7 +243,25 @@ const Post = () => {
                   <Text style={{ color: '#FB7A41' }}>Like</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.push('DetailPost')}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.push('DetailPost', {
+                    postImage: data.postImage,
+                    postPersonImage: data.postPersonImage,
+                    postUser: data.postUser,
+                    hour: data.hour,
+                    address: data.address,
+                    title: data.title,
+                    rate: data.rate,
+                    personRate: data.personRate,
+                    caption: data.caption,
+                    likes: data.likes,
+                    header: data.header,
+                    isLike: data.isLike,
+                    isSave: data.isSave,
+                  })
+                }
+              >
                 <View
                   style={{
                     flexDirection: 'row',
