@@ -17,6 +17,7 @@ const DetailPost = ({ route, navigation }) => {
   const { postImage } = route.params;
   const { postPersonImage } = route.params;
   const { postUser } = route.params;
+  const { location } = route.params;
   const { hour } = route.params;
   const { address } = route.params;
   const { title } = route.params;
@@ -172,14 +173,18 @@ const DetailPost = ({ route, navigation }) => {
               </Text>
             </View>
           </View>
-          <View
-            style={{
-              marginTop: 16,
-              backgroundColor: 'aqua',
-              width: 396,
-              height: 240,
-            }}
-          ></View>
+          <TouchableOpacity onPress={() => navigation.push('Maps')}>
+            <View
+              style={{
+                marginTop: 16,
+                width: 396,
+                height: 240,
+              }}
+            >
+              <Image source={location} style={{ width: 396, height: 240 }} />
+            </View>
+          </TouchableOpacity>
+
           <View style={{ borderBottomWidth: 1, borderColor: '#D9D9D9' }}>
             <View
               style={{

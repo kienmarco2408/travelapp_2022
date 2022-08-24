@@ -49,6 +49,7 @@ const Comment = () => {
       {comment.map((data, index) => {
         return (
           <View
+            key={index}
             style={{
               height: 36,
               width: 344,
