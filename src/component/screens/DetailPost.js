@@ -24,7 +24,6 @@ const DetailPost = ({ route, navigation }) => {
   const { rate } = route.params;
   const { personRate } = route.params;
   const { caption } = route.params;
-  const { likes } = route.params;
   const { header } = route.params;
   const { isLike } = route.params;
   const { isSave } = route.params;

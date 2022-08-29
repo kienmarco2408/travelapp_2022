@@ -1,8 +1,18 @@
-import { View, Text, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import React from 'react';
 import CardExplore from '../screenComponent/cardExplore';
+import { useFonts } from 'expo-font';
+import { ScrollView } from 'react-native-virtualized-view';
 
 const Explore = () => {
+  const [loaded] = useFonts({
+    Poppins_Light: require('../../../assets/font/Poppins/Poppins-Light.ttf'),
+    Poppins_Medium: require('../../../assets/font/Poppins/Poppins-Medium.ttf'),
+    Poppins_Bold: require('../../../assets/font/Poppins/Poppins-Bold.ttf'),
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <SafeAreaView>
       <View>
@@ -15,7 +25,6 @@ const Explore = () => {
               <Text
                 style={{
                   fontFamily: 'Poppins_Medium',
-
                   fontSize: 32,
                   letterSpacing: -0.3,
                   lineHeight: 48,
@@ -25,7 +34,7 @@ const Explore = () => {
                 Explore
               </Text>
             </View>
-            <View style={{ marginTop: 32 }}>
+            <View style={{ marginTop: 32, marginBottom: 50 }}>
               <CardExplore />
             </View>
           </View>

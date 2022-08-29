@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
 
 const SearchBox = () => {
   return (
@@ -8,7 +8,7 @@ const SearchBox = () => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
+        width: '85%',
         paddingVertical: 10,
         position: 'relative',
       }}
@@ -20,7 +20,7 @@ const SearchBox = () => {
           opacity: 0.7,
           position: 'absolute',
           zIndex: 1,
-          left: 30,
+          left: 20,
           color: '#F9693B',
         }}
       />
@@ -28,14 +28,14 @@ const SearchBox = () => {
         placeholder="Search"
         placeholderTextColor="#F9693B"
         style={{
-          width: '94%',
+          width: '92%',
           backgroundColor: '#FFFFFF',
           borderRadius: 6,
           alignItems: 'center',
           justifyContent: 'center',
           fontSize: 16,
           padding: 10,
-          paddingLeft: 60,
+          paddingLeft: 40,
           fontFamily: 'Poppins_Medium',
           shadowOpacity: 0.25,
           shadowOffset: {

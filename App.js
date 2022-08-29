@@ -17,6 +17,7 @@ import Status from './src/component/screenComponent/Status';
 import DetailCategories from './src/component/screenComponent/DetailCategories';
 import DetailPost from './src/component/screens/DetailPost';
 import Maps from './src/component/screens/Maps';
+import CreatePost from './src/component/screens/CreatePost';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -154,6 +155,7 @@ function App() {
           <Stack.Screen name="DetailCategories" component={DetailCategories} />
           <Stack.Screen name="DetailPost" component={DetailPost} />
           <Stack.Screen name="Maps" component={Maps} />
+          <Stack.Screen name="CreatePost" component={CreatePost} />
         </Stack.Navigator>
       ) : (
         <AppIntroSlider

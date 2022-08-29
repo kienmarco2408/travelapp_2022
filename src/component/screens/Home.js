@@ -1,4 +1,11 @@
-import { View, Text, SafeAreaView, TextInput, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import SearchBox from '../screenComponent/SearchBox';
 import { useFonts } from 'expo-font';
@@ -6,8 +13,9 @@ import Stories from '../screenComponent/Stories';
 import Post from '../screenComponent/Post';
 import PostSecond from '../screenComponent/Post_1';
 import Categories from '../screenComponent/Categories';
+import { Feather } from '@expo/vector-icons';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [loaded] = useFonts({
     Poppins_Light: require('../../../assets/font/Poppins/Poppins-Light.ttf'),
     Poppins_Medium: require('../../../assets/font/Poppins/Poppins-Medium.ttf'),
@@ -23,7 +31,15 @@ const Home = () => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
-          <SearchBox />
+          <View style={{ flexDirection: 'row' }}>
+            <SearchBox />
+            <TouchableOpacity onPress={() => navigation.navigate('CreatePost')}>
+              <View style={{ marginTop: 12 }}>
+                <Feather name="plus-circle" size={40} color="#F9693B" />
+              </View>
+            </TouchableOpacity>
+          </View>
+
           <Text
             style={{
               marginLeft: 16,
